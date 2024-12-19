@@ -1,22 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SOCIALS, PROJECTS } from '../index';
 
 import { Icon } from 'astro-icon/components';
-
-const socials = {
-	GitHub: { link: 'https://github.com/m00nwtchr', icon: 'fa6-brands:github' },
-	LinkedIn: {
-		link: 'https://github.com/m00nwtchr',
-		icon: 'fa6-brands:linkedin',
-	},
-};
-const projects = {
-	'Project 1': {
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at tempor massa. Aliquam aliquet ultricies urna, non commodo nisi imperdiet tempor.',
-		link: 'https://github.com/m00nwtchr/cofd-pc',
-	},
-};
 ---
 
 <Layout>
@@ -49,14 +35,14 @@ const projects = {
 
 			<div class="my-10 flex items-center gap-x-10 text-white">
 				{
-					Object.entries(socials).map(([name, social]) => (
+					Object.entries(SOCIALS).map(([name, social]) => (
 						<a href="{ social.link }">
 							<figure>
 								<div
 									aria-hidden="true"
 									class="text-rhino-400 outline-rhino-400 mx-auto mb-2 flex aspect-square h-12 items-center justify-center rounded-full outline"
 								>
-									<Icon name={social.icon} class="h-4/6" />
+									<Icon name={social.icon} class="h-4/6 w-4/6" />
 								</div>
 								<figcaption>{name}</figcaption>
 							</figure>
@@ -67,10 +53,10 @@ const projects = {
 		</div>
 	</section>
 
-	<section class="flex px-28 pt-5">
+	<section class="flex items-center gap-10 px-28 pt-5">
 		{
-			Object.entries(projects).map(([name, project]) => (
-				<div class="bg-slate-gray-900 border-slate-gray-900 bg-opacity-40 box-border h-full w-1/4 rounded-md border bg-clip-padding p-5 text-center backdrop-blur-sm backdrop-filter">
+			Object.entries(PROJECTS).map(([name, project]) => (
+				<div class="bg-steel-gray-900/30 border-steel-gray-900/50 bg-opacity-40 box-border h-full flex-auto rounded-2xl border bg-clip-padding p-5 text-center backdrop-blur-[2px] backdrop-filter">
 					<div class="mx-auto block aspect-square w-full border-0" />
 					<h3 class="mt-5 text-3xl font-bold text-white">{name}</h3>
 					<p>{project.description}</p>

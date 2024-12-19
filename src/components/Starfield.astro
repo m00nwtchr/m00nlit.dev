@@ -1,6 +1,6 @@
 <img
 	id="starfield"
-	class="absolute inset-x-0 top-0 -z-10 h-full w-full opacity-30"
+	class="absolute inset-x-0 top-0 -z-10 opacity-30"
 	src="/starfield.png"
 />
 
@@ -12,10 +12,11 @@
 
 	const fallback = document.getElementById('starfield');
 	if (fallback) {
+		const container = fallback.parentElement;
 		const canvas = document.createElement('canvas');
 		canvas.classList = fallback.classList;
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
+		canvas.width = container.offsetWidth;
+		canvas.height = container.offsetHeight;
 
 		const ctx = canvas.getContext('2d');
 		fallback.parentElement.replaceChild(canvas, fallback);
@@ -69,8 +70,8 @@
 
 		// Handle window resize
 		window.addEventListener('resize', () => {
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
+			canvas.width = container.offsetWidth;
+			canvas.height = container.offsetHeight;
 		});
 
 		// Start the animation

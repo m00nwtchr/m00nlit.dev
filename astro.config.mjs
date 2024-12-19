@@ -1,15 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 
-// https://astro.build/config
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineConfig({
 	site: 'https://m00nlit.dev',
 	integrations: [sitemap(), icon()],
-
 	vite: {
 		plugins: [tailwindcss()],
 		css: {
