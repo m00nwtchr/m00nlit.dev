@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/crimson-pro';
+
+@theme {
+	--font-*: initial;
+	--font-sans: Inter Variable, ui-sans-serif, system-ui, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-serif: Crimson Pro Variable, ui-serif, Georgia, Cambria,
+		'Times New Roman', Times, serif;
+
+	--color-*: initial;
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-frosted: rgba(255, 255, 255, 0.3);
+	--color-transparent: rgba(0, 0, 0, 0);
+
+	--color-steel-gray-50: #f1f5fc;
+	--color-steel-gray-100: #e6ebf9;
+	--color-steel-gray-200: #d2dbf3;
+	--color-steel-gray-300: #b7c3ea;
+	--color-steel-gray-400: #99a4e0;
+	--color-steel-gray-500: #8087d4;
+	--color-steel-gray-600: #6768c4;
+	--color-steel-gray-700: #5756ac;
+	--color-steel-gray-800: #48488b;
+	--color-steel-gray-900: #3f4070;
+	--color-steel-gray-950: #1a1a2e;
+
+	--color-silver-50: #f7f7f7;
+	--color-silver-100: #f0f0f0;
+	--color-silver-200: #e3e3e3;
+	--color-silver-300: #d1d1d1;
+	--color-silver-400: #c0c0c0;
+	--color-silver-500: #aaaaaa;
+	--color-silver-600: #969696;
+	--color-silver-700: #818181;
+	--color-silver-800: #6a6a6a;
+	--color-silver-900: #585858;
+	--color-silver-950: #333333;
+
+	--color-purple-800: #6a0dad;
+
+	--color-teal-600: #00b3b3;
+
+	--color-gold-500: #ffd700;
+
+	--color-rhino-50: #f3f6fb;
+	--color-rhino-100: #e3ebf6;
+	--color-rhino-200: #cddef0;
+	--color-rhino-300: #abc7e5;
+	--color-rhino-400: #82aad8;
+	--color-rhino-500: #658ecc;
+	--color-rhino-600: #5175bf;
+	--color-rhino-700: #4764ae;
+	--color-rhino-800: #3e528f;
+	--color-rhino-900: #2e3c61;
+	--color-rhino-950: #252d46;
+}
