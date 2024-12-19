@@ -8,14 +8,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://m00nlit.dev',
-	integrations: [
-		sitemap(),
-		icon({
-			include: {
-				fa6: ['brands'],
-			},
-		}),
-	],
+	integrations: [sitemap(), icon()],
 
 	vite: {
 		plugins: [tailwindcss()],
