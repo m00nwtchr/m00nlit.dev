@@ -9,17 +9,20 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/sitemap": "^3.2.1",
 		"@fontsource-variable/crimson-pro": "^5.1.0",
 		"@fontsource-variable/inter": "^5.1.0",
-		"@iconify-json/fa6-brands": "^1.2.5"
-	},
-	"devDependencies": {
+		"@iconify-json/fa6-brands": "^1.2.5",
+		"@tailwindcss/vite": "4.0.0-beta.8",
 		"astro": "^5.1.0",
-		"@astrojs/sitemap": "^3.2.1",
 		"astro-icon": "^1.1.4",
 		"lightningcss": "^1.28.2",
-		"tailwindcss": "4.0.0-beta.8",
-		"@tailwindcss/vite": "4.0.0-beta.8",
+		"satori": "^0.12.0",
+		"satori-html": "^0.3.2",
+		"sharp": "^0.33.5",
+		"tailwindcss": "4.0.0-beta.8"
+	},
+	"devDependencies": {
 		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.9"

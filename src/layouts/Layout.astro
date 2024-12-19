@@ -10,11 +10,26 @@ import '../base.css';
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>m00nlit.dev</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<title>m00nlit.dev</title>
+		<meta
+			name="description"
+			content="Innovative software engineering projects, open source, and scalable solutions that merge technical excellence with a passion for creativity."
+		/>
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="m00nlit.dev" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content={Astro.url + 'og.png'} />
+		<meta
+			property="og:description"
+			content="Innovative software engineering projects, open source, and scalable solutions that merge technical excellence with a passion for creativity."
+		/>
 	</head>
 
 	<body class="bg-steel-gray-950 text-silver-400 font-sans">
