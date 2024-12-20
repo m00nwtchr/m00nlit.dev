@@ -4,7 +4,7 @@ export const DESCRIPTION =
 export const SOCIALS = {
 	GitHub: { link: 'https://github.com/m00nwtchr', icon: 'fa6-brands:github' },
 	LinkedIn: {
-		link: 'https://github.com/m00nwtchr',
+		link: 'https://www.linkedin.com/in/m00nwtchr',
 		icon: 'fa6-brands:linkedin',
 	},
 };
