@@ -1,3 +1,6 @@
+export const DESCRIPTION =
+	'Innovative software projects, open source contributions, and scalable solutions, combining technical expertise with a passion for creative problem-solving.';
+
 export const SOCIALS = {
 	GitHub: { link: 'https://github.com/m00nwtchr', icon: 'fa6-brands:github' },
 	LinkedIn: {

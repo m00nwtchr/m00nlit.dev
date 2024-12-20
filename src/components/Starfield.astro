@@ -1,47 +1,60 @@
-<img
+<div
 	id="starfield"
-	class="absolute inset-x-0 top-0 -z-10 opacity-30"
-	src="/starfield.png"
-/>
+	class="fixed inset-x-0 top-0 -z-10 h-screen w-screen bg-[url('/starfield.avif')] bg-repeat-y opacity-30"
+>
+</div>
 
 <script>
 	// Constants for star field configuration
-	const numStars = 200; // Number of stars
 	const maxStarSize = 1.5; // Maximum size of stars in pixels
 	const speed = 0.5; // Speed of star movement
+	const starDensity = 0.00005; // Density of stars (stars per pixel)
+
+	const starColors = [
+		'rgb(255, 255, 255)', // White
+		'rgb(255, 215, 0)', // Gold
+		'rgb(173, 216, 230)', // Light Blue
+		'rgb(240, 128, 128)', // Light Coral
+		'rgb(221, 160, 221)', // Plum
+		'rgb(144, 238, 144)', // Light Green
+	];
+
+	Array.prototype.extend = function (arr) {
+		this.push.apply(this, arr);
+	};
 
 	const fallback = document.getElementById('starfield');
 	if (fallback) {
 		const container = fallback.parentElement;
 		const canvas = document.createElement('canvas');
 		canvas.classList = fallback.classList;
-		canvas.width = container.offsetWidth;
-		canvas.height = container.offsetHeight;
+
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
 
 		const ctx = canvas.getContext('2d');
 		fallback.parentElement.replaceChild(canvas, fallback);
 
-		const starColors = [
-			'rgb(255, 255, 255)', // White
-			'rgb(255, 215, 0)', // Gold
-			'rgb(173, 216, 230)', // Light Blue
-			'rgb(240, 128, 128)', // Light Coral
-			'rgb(221, 160, 221)', // Plum
-			'rgb(144, 238, 144)', // Light Green
-		];
+		const calcNumStars = () =>
+			Math.floor(canvas.width * canvas.height * starDensity);
 
-		// Generate stars and store their positions and velocities
-		const stars = [];
-		for (let i = 0; i < numStars; i++) {
-			stars.push({
-				x: Math.random() * canvas.width,
-				y: Math.random() * canvas.height,
-				size: Math.random() * maxStarSize + 1,
-				velocityX: (Math.random() - 0.5) * speed,
-				velocityY: (Math.random() - 0.5) * speed,
-				color: starColors[Math.floor(Math.random() * starColors.length)],
-			});
-		}
+		const generateStars = (numStars) => {
+			// Generate stars and store their positions and velocities
+			const stars = [];
+			for (let i = 0; i < numStars; i++) {
+				stars.push({
+					x: Math.random() * canvas.width,
+					y: Math.random() * canvas.height,
+					size: Math.random() * maxStarSize + 1,
+					velocityX: (Math.random() - 0.5) * speed,
+					velocityY: (Math.random() - 0.5) * speed,
+					color: starColors[Math.floor(Math.random() * starColors.length)],
+				});
+			}
+			return stars;
+		};
+
+		const stars = generateStars(calcNumStars());
 
 		// Animate the stars
 		function animateStars() {
@@ -70,8 +83,13 @@
 
 		// Handle window resize
 		window.addEventListener('resize', () => {
-			canvas.width = container.offsetWidth;
-			canvas.height = container.offsetHeight;
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			const numStars = calcNumStars();
+			if (numStars > stars.length) {
+				stars.extend(generateStars(numStars - stars.length));
+			}
 		});
 
 		// Start the animation

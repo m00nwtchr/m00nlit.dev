@@ -58,3 +58,7 @@
 	--color-rhino-900: #2e3c61;
 	--color-rhino-950: #252d46;
 }
+
+@utility glass {
+	@apply bg-steel-gray-900/30 border-steel-gray-900/50 border bg-clip-padding drop-shadow-lg backdrop-blur-[2px] backdrop-filter;
+}
