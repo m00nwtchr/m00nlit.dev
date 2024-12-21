@@ -22,4 +22,7 @@ export default defineConfig({
 		locales: ['en', 'pl'],
 		defaultLocale: 'en',
 	},
+	experimental: {
+		svg: true,
+	},
 });
