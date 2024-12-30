@@ -60,5 +60,5 @@
 }
 
 @utility glass {
-	@apply bg-steel-gray-900/30 border-steel-gray-900/50 border bg-clip-padding drop-shadow-lg backdrop-blur-[2px] backdrop-filter;
+	@apply transform-gpu bg-steel-gray-900/30 border-steel-gray-900/50 border bg-clip-padding drop-shadow-lg backdrop-blur-[2px] backdrop-filter;
 }
