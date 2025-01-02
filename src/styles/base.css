@@ -59,6 +59,8 @@
 	--color-rhino-950: #252d46;
 }
 
+@variant low-performance (&:where(.low-performance, .low-performance *));
+
 @utility glass {
-	@apply transform-gpu bg-steel-gray-900/30 border-steel-gray-900/50 border bg-clip-padding drop-shadow-lg backdrop-blur-[2px] backdrop-filter;
+	@apply bg-steel-gray-900/30 border-steel-gray-900/50 low-performance:backdrop-blur-none border bg-clip-padding drop-shadow-lg backdrop-blur-[2px];
 }

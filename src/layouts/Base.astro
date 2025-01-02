@@ -39,3 +39,52 @@ import '../styles/base.css';
 		<Starfield />
 	</body>
 </html>
+
+<script>
+	function toggleFilter() {
+		if (localStorage.getItem('lowPerformance') === 'true') {
+			console.warn('Backdrop-filter disabled due to poor performance');
+			document.body.classList.add('low-performance');
+		}
+	}
+
+	function testPerformance() {
+		const frameTimes = [];
+		let frameCount = 0;
+
+		function measureFrame() {
+			const start = performance.now();
+			requestAnimationFrame(() => {
+				const end = performance.now();
+				frameTimes.push(end - start);
+				frameCount++;
+
+				if (frameCount < 50) {
+					measureFrame();
+				} else {
+					finalizeTest();
+				}
+			});
+		}
+
+		function finalizeTest() {
+			const averageFrameTime =
+				frameTimes.reduce((a, b) => a + b, 0) / frameTimes.length;
+
+			console.debug(`Average frame time: ${averageFrameTime.toFixed(2)} ms`);
+
+			if (averageFrameTime > 50) {
+				localStorage.setItem('lowPerformance', true);
+			} else {
+				localStorage.setItem('lowPerformance', false);
+			}
+
+			toggleFilter();
+		}
+
+		measureFrame();
+	}
+
+	toggleFilter();
+	testPerformance();
+</script>
