@@ -1,20 +1,28 @@
 ---
-import Layout from '../layouts/Base.astro';
-import { SOCIALS, PROJECTS } from '../index';
+import { t, changeLanguage } from 'i18next';
+import { Trans } from 'astro-i18next/components';
 
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+
+import Layout from '../layouts/Base.astro';
+import { SOCIALS, PROJECTS } from '../index';
+
+const language = Astro.params.lang || 'en';
+changeLanguage(language);
 ---
 
-<Layout>
+<Layout title={t('pageTitle')}>
 	<section class="relative isolate px-5 pt-5 sm:px-28">
 		<div class="max-w-2xl">
 			<h1
 				class="text-center font-serif text-5xl font-semibold tracking-tight text-balance text-white sm:text-left sm:text-7xl"
 			>
-				Software
-				<br class="hidden sm:inline" />
-				Engineer
+				<Trans i18nKey="pageHeader">
+					Software
+					<br class="hidden sm:inline" />
+					Engineer
+				</Trans>
 			</h1>
 			<p
 				class="text-silver-300 mt-5 text-center text-lg font-medium text-pretty sm:mt-24 sm:w-4/5 sm:text-left"

@@ -1,8 +1,8 @@
-<div
+<canvas
 	id="starfield"
 	class="fixed inset-x-0 top-0 -z-10 h-screen w-screen bg-[url('/starfield.avif')] bg-repeat-y opacity-30"
 >
-</div>
+</canvas>
 
 <script>
 	// Constants for star field configuration
@@ -23,76 +23,69 @@
 		this.push.apply(this, arr);
 	};
 
-	const fallback = document.getElementById('starfield');
-	if (fallback) {
-		const container = fallback.parentElement;
-		const canvas = document.createElement('canvas');
-		canvas.classList = fallback.classList;
+	const canvas = document.getElementById('starfield');
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
 
+	const ctx = canvas.getContext('2d');
+
+	const calcNumStars = () =>
+		Math.floor(canvas.width * canvas.height * starDensity);
+
+	const generateStars = (numStars) => {
+		// Generate stars and store their positions and velocities
+		const stars = [];
+		for (let i = 0; i < numStars; i++) {
+			stars.push({
+				x: Math.random() * canvas.width,
+				y: Math.random() * canvas.height,
+				size: Math.random() * maxStarSize + 1,
+				velocityX: (Math.random() - 0.5) * speed,
+				velocityY: (Math.random() - 0.5) * speed,
+				color: starColors[Math.floor(Math.random() * starColors.length)],
+			});
+		}
+		return stars;
+	};
+
+	const stars = generateStars(calcNumStars());
+
+	// Animate the stars
+	function animateStars() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		for (const star of stars) {
+			// Update position
+			star.x += star.velocityX;
+			star.y += star.velocityY;
+
+			// Wrap stars around the field
+			if (star.x > canvas.width) star.x = 0;
+			if (star.x < 0) star.x = canvas.width;
+			if (star.y > canvas.height) star.y = 0;
+			if (star.y < 0) star.y = canvas.height;
+
+			// Draw the star
+			ctx.beginPath();
+			ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+			ctx.fillStyle = star.color;
+			ctx.fill();
+		}
+
+		requestAnimationFrame(animateStars);
+	}
+
+	// Handle window resize
+	window.addEventListener('resize', () => {
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
 
-		const ctx = canvas.getContext('2d');
-		fallback.parentElement.replaceChild(canvas, fallback);
-
-		const calcNumStars = () =>
-			Math.floor(canvas.width * canvas.height * starDensity);
-
-		const generateStars = (numStars) => {
-			// Generate stars and store their positions and velocities
-			const stars = [];
-			for (let i = 0; i < numStars; i++) {
-				stars.push({
-					x: Math.random() * canvas.width,
-					y: Math.random() * canvas.height,
-					size: Math.random() * maxStarSize + 1,
-					velocityX: (Math.random() - 0.5) * speed,
-					velocityY: (Math.random() - 0.5) * speed,
-					color: starColors[Math.floor(Math.random() * starColors.length)],
-				});
-			}
-			return stars;
-		};
-
-		const stars = generateStars(calcNumStars());
-
-		// Animate the stars
-		function animateStars() {
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-			for (const star of stars) {
-				// Update position
-				star.x += star.velocityX;
-				star.y += star.velocityY;
-
-				// Wrap stars around the field
-				if (star.x > canvas.width) star.x = 0;
-				if (star.x < 0) star.x = canvas.width;
-				if (star.y > canvas.height) star.y = 0;
-				if (star.y < 0) star.y = canvas.height;
-
-				// Draw the star
-				ctx.beginPath();
-				ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-				ctx.fillStyle = star.color;
-				ctx.fill();
-			}
-
-			requestAnimationFrame(animateStars);
+		const numStars = calcNumStars();
+		if (numStars > stars.length) {
+			stars.extend(generateStars(numStars - stars.length));
 		}
+	});
 
-		// Handle window resize
-		window.addEventListener('resize', () => {
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-
-			const numStars = calcNumStars();
-			if (numStars > stars.length) {
-				stars.extend(generateStars(numStars - stars.length));
-			}
-		});
-
-		// Start the animation
-		animateStars();
-	}
+	// Start the animation
+	animateStars();
 </script>
