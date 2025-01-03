@@ -12,7 +12,11 @@ const language = Astro.params.lang || 'en';
 changeLanguage(language);
 ---
 
-<Layout title={t('pageTitle')}>
+<Layout
+	title={t('pageTitle')}
+	description={t('pageDescription')}
+	keywords={t('pageKeywords')}
+>
 	<section class="relative isolate px-5 pt-5 sm:px-28">
 		<div class="max-w-2xl">
 			<h1

@@ -1,14 +1,12 @@
 ---
-import i18next, { t } from 'i18next';
+import i18next from 'i18next';
 import { Trans, HeadHrefLangs } from 'astro-i18next/components';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Starfield from '../components/Starfield.astro';
 
-import { DESCRIPTION } from '../index';
-
-const { title } = Astro.props;
+const { title, keywords, description } = Astro.props;
 
 import '../styles/base.css';
 ---
@@ -24,15 +22,18 @@ import '../styles/base.css';
 		<HeadHrefLangs />
 
 		<title>{title}</title>
-		<meta name="description" content={DESCRIPTION} />
+		<meta name="author" content="Łukasz Mariański" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Open Graph Meta Tags -->
-		<meta property="og:title" content="m00nlit.dev" />
+		<meta property="og:title" content={title} />
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content={Astro.url + 'og.png'} />
-		<meta property="og:description" content={DESCRIPTION} />
+		<meta property="og:image" content={Astro.url + '/og.png'} />
+		<meta property="og:description" content={description} />
 	</head>
 
 	<body class="bg-steel-gray-950 text-silver-400 font-sans">
