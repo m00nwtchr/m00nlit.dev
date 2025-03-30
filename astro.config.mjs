@@ -19,6 +19,11 @@ export default defineConfig({
 		build: {
 			cssMinify: 'lightningcss',
 		},
+		server: {
+			watch: {
+				ignored: /(^|[\/\\])\../, // Ignore dotfiles
+			},
+		},
 	},
 	// i18n: {
 	// 	locales: ['en', 'pl'],

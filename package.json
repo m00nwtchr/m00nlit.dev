@@ -9,24 +9,24 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/sitemap": "^3.2.1",
-		"@fontsource-variable/crimson-pro": "^5.1.0",
-		"@fontsource-variable/inter": "^5.1.0",
+		"@astrojs/sitemap": "^3.3.0",
+		"@fontsource-variable/crimson-pro": "^5.2.5",
+		"@fontsource-variable/inter": "^5.2.5",
 		"@iconify-json/fa6-brands": "^1.2.5",
 		"@tailwindcss/vite": "4.0.0-beta.8",
-		"astro": "^5.1.0",
+		"astro": "^5.5.5",
 		"astro-i18next": "1.0.0-beta.21",
-		"astro-icon": "^1.1.4",
-		"i18next": "^22.4.10",
-		"lightningcss": "^1.28.2",
-		"satori": "^0.12.0",
+		"astro-icon": "^1.1.5",
+		"i18next": "^22.5.1",
+		"lightningcss": "^1.29.3",
+		"satori": "^0.12.2",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.33.5",
-		"tailwindcss": "4.0.0-beta.8"
+		"tailwindcss": "4.0.17"
 	},
 	"devDependencies": {
-		"prettier": "^3.4.2",
+		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-tailwindcss": "^0.6.9"
+		"prettier-plugin-tailwindcss": "^0.6.11"
 	}
 }
