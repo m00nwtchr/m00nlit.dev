@@ -1,12 +1,14 @@
 ---
-import { locales, extractLocaleFromUrl, setLocale } from '../../paraglide/runtime.js';
+import { baseLocale, locales, extractLocaleFromUrl, setLocale } from '../../paraglide/runtime.js';
 import Index from '../index.astro';
 
 export function getStaticPaths() {
-	return locales.map((lang) => ({
+	return locales.filter(l => l !== baseLocale).map((lang) => ({
 		params: { lang },
 	}));
 }
+
+setLocale(Astro.params.lang || 'en');
 ---
 
 <Index />

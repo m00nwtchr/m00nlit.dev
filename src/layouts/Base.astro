@@ -11,13 +11,13 @@ interface Props {
 }
 
 const { title, keywords, description } = Astro.props;
-
+const lang = Astro.params.lang || 'en';
 
 import '../styles/base.css';
 ---
 
 <!doctype html>
-<html>
+<html lang={lang}>
 	<head>
 		<Head title={title} keywords={keywords} description={description} />
 	</head>

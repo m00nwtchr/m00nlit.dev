@@ -1,6 +1,7 @@
 ---
 import { locales, isLocale } from '../paraglide/runtime.js';
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { Font } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -28,6 +29,9 @@ const currentPathWithoutLanguage = removeLanguagePrefix(Astro.url.pathname);
 <meta name="keywords" content={keywords} />
 
 <meta name="generator" content={Astro.generator} />
+
+<Font cssVariable="--font-inter" preload />
+<Font cssVariable="--font-crimson-pro" preload />
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:title" content={title} />

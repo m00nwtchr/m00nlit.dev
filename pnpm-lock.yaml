@@ -14,12 +14,6 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.4.0
         version: 3.4.0
-      '@fontsource-variable/crimson-pro':
-        specifier: ^5.2.5
-        version: 5.2.5
-      '@fontsource-variable/inter':
-        specifier: ^5.2.5
-        version: 5.2.5
       '@iconify-json/arcticons':
         specifier: ^1.2.26
         version: 1.2.26
@@ -272,12 +266,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@fontsource-variable/crimson-pro@5.2.5':
-    resolution: {integrity: sha512-+F/8QxteTDMYjVomoX0NsEfEw7bT0BnNS6R8D/l7nUbiuALcfV0MDmhb4hY4IVgyvAtlFGPJkLQMuKBtyaxBJQ==}
-
-  '@fontsource-variable/inter@5.2.5':
-    resolution: {integrity: sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==}
 
   '@iconify-json/arcticons@1.2.26':
     resolution: {integrity: sha512-se2ytUg9N7+XbA3rNWZ4Ii/dn/C+wGf25wd6/n4/In6U1RkOXGqhXEcWxEomH2LKYITmGyBpiMWNDJaCrE5tUQ==}
@@ -2525,10 +2513,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.2':
     optional: true
-
-  '@fontsource-variable/crimson-pro@5.2.5': {}
-
-  '@fontsource-variable/inter@5.2.5': {}
 
   '@iconify-json/arcticons@1.2.26':
     dependencies:

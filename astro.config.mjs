@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import node from '@astrojs/node';
 
 import sitemap from '@astrojs/sitemap';
@@ -35,6 +35,25 @@ export default defineConfig({
 	i18n: {
 		defaultLocale: 'en',
 		locales: ['en', 'pl'],
+		routing: {
+			prefixDefaultLocale: false,
+		},
+	},
+	experimental: {
+		fonts: [
+			{
+				provider: fontProviders.fontsource(),
+				name: 'Inter',
+				cssVariable: '--font-inter',
+				fallbacks: ['sans-serif'],
+			},
+			{
+				provider: fontProviders.fontsource(),
+				name: 'Crimson Pro',
+				cssVariable: '--font-crimson-pro',
+				fallbacks: ['serif'],
+			},
+		],
 	},
 	// output: 'server',
 	// adapter: node({ mode: 'standalone' }),
