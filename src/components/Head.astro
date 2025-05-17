@@ -1,0 +1,41 @@
+---
+import { locales, isLocale } from '../paraglide/runtime.js';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+
+interface Props {
+	title: string;
+	keywords: string;
+	description: string;
+}
+
+const { title, keywords, description } = Astro.props;
+
+function removeLanguagePrefix(path: string) {
+	const [maybeLanguage, ...rest] = path.split('/').filter(Boolean);
+	return isLocale(maybeLanguage) ? rest.join('/') : path;
+}
+
+const currentPathWithoutLanguage = removeLanguagePrefix(Astro.url.pathname);
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<title>{title}</title>
+<meta name="author" content="Łukasz Mariański" />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+
+<meta name="generator" content={Astro.generator} />
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content={title} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={new URL('og.png', Astro.url)} />
+<meta property="og:description" content={description} />
+
+{locales.map(lang => (
+	<link rel="alternate" hreflang={lang} href={getAbsoluteLocaleUrl(lang, currentPathWithoutLanguage)} />
+))}

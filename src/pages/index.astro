@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+import { setLocale } from '../paraglide/runtime.js';
 
 import Layout from '../layouts/Base.astro';
 import { SOCIALS, PROJECTS } from '../index';
 
-import * as m from "../paraglide/messages.js";
+import { m } from "../paraglide/messages.js";
 ---
 
 <Layout
@@ -18,11 +19,8 @@ import * as m from "../paraglide/messages.js";
  			<h1
 				class="text-center font-serif text-5xl font-semibold tracking-tight text-balance text-white sm:text-left sm:text-7xl"
 			>
-				<Trans i18nKey="pageHeader">
-					Łukasz
-					<br class="hidden sm:inline" />
-					Mariański
-				</Trans>
+					<!-- <br class="hidden sm:inline" /> -->
+				{m.page_header()}
 			</h1>
 			<h2
 				class="text-center text-silver-200 text-xl font-medium sm:text-left sm:text-2xl mt-2"

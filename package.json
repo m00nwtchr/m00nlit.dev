@@ -19,7 +19,6 @@
 		"@tailwindcss/vite": "4.0.0-beta.8",
 		"astro": "^5.7.13",
 		"astro-icon": "^1.1.5",
-		"fast-glob": "^3.3.3",
 		"lightningcss": "^1.29.3",
 		"satori": "^0.12.2",
 		"satori-html": "^0.3.2",

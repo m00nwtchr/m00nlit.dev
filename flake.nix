@@ -18,6 +18,7 @@
         packages = with pkgs; [
           nodejs
           nodePackages.pnpm
+          typescript-language-server
         ];
 
         shellHook = ''

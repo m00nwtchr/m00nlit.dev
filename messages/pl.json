@@ -1,11 +1,11 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"page.title": "Łukasz Mariański - Web Developer & Software Engineer",
-	"page.description": "Innowacyjne projekty oprogramowania, wkład w open source i skalowalne rozwiązania, łączące ekspertyzę techniczną z pasją do kreatywnego rozwiązywania problemów.",
-	"page.keywords": "hire, Web Developer, Software Engineer, m00nlit, moonlit, m00nwtchr, m00nw4tch3r, rozwój oprogramowania, portfolio, Rust Developer, Open Source Advocate, scalable solutions, Python developer, React developer, Java backend developer, rozwiązania programistyczne, portfolio technologiczne, rozwiązania cyfrowe, usługi inżynierii oprogramowania, nowoczesne praktyki rozwoju, full-stack developer, freelancer, techniczne umiejętności, architektura oprogramowania, inżynieria oprogramowania Polska",
-	"page.header": "Łukasz<0>Mariański",
-	"page.subtitle": "Twórca stron internetowych",
-	"main.text": "Cześć! Zajmuję się tworzeniem stron internetowych jako freelancer. Specjalizuję się w przejrzystych projektach, responsywnych układach oraz nowoczesnych rozwiązaniach dla osób prywatnych i małych firm.",
+	"page_title": "Łukasz Mariański - Web Developer & Software Engineer",
+	"page_description": "Innowacyjne projekty oprogramowania, wkład w open source i skalowalne rozwiązania, łączące ekspertyzę techniczną z pasją do kreatywnego rozwiązywania problemów.",
+	"page_keywords": "hire, Web Developer, Software Engineer, m00nlit, moonlit, m00nwtchr, m00nw4tch3r, rozwój oprogramowania, portfolio, Rust Developer, Open Source Advocate, scalable solutions, Python developer, React developer, Java backend developer, rozwiązania programistyczne, portfolio technologiczne, rozwiązania cyfrowe, usługi inżynierii oprogramowania, nowoczesne praktyki rozwoju, full-stack developer, freelancer, techniczne umiejętności, architektura oprogramowania, inżynieria oprogramowania Polska",
+	"page_header": "Łukasz\nMariański",
+	"page_subtitle": "Twórca stron internetowych",
+	"main_text": "Cześć! Zajmuję się tworzeniem stron internetowych jako freelancer. Specjalizuję się w przejrzystych projektach, responsywnych układach oraz nowoczesnych rozwiązaniach dla osób prywatnych i małych firm.",
 	"contact_me": "Napisz do mnie",
 	"learn_more": "Dowiedz się więcej"
 }
