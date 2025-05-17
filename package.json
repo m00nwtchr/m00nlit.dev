@@ -9,14 +9,16 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/sitemap": "^3.3.0",
+		"@astrojs/sitemap": "^3.4.0",
 		"@fontsource-variable/crimson-pro": "^5.2.5",
 		"@fontsource-variable/inter": "^5.2.5",
+		"@iconify-json/arcticons": "^1.2.26",
 		"@iconify-json/fa6-brands": "^1.2.5",
 		"@tailwindcss/vite": "4.0.0-beta.8",
-		"astro": "^5.5.5",
+		"astro": "^5.7.13",
 		"astro-i18next": "1.0.0-beta.21",
 		"astro-icon": "^1.1.5",
+		"fast-glob": "^3.3.3",
 		"i18next": "^22.5.1",
 		"lightningcss": "^1.29.3",
 		"satori": "^0.12.2",

@@ -30,6 +30,6 @@ export default defineConfig({
 	// 	defaultLocale: 'en',
 	// },
 	experimental: {
-		svg: true,
+		// svg: true,
 	},
 });

@@ -1,13 +1,18 @@
 import geomaster from './assets/geo-master.svg';
+import keyoxide from './assets/keyoxide.svg';
 
 export const DESCRIPTION =
 	'Innovative software projects, open source contributions, and scalable solutions, combining technical expertise with a passion for creative problem-solving.';
 
 export const SOCIALS = {
 	GitHub: { link: 'https://github.com/m00nwtchr', icon: 'fa6-brands:github' },
-	LinkedIn: {
-		link: 'https://www.linkedin.com/in/m00nwtchr',
-		icon: 'fa6-brands:linkedin',
+	// LinkedIn: {
+	// 	link: 'https://www.linkedin.com/in/m00nwtchr',
+	// 	icon: 'fa6-brands:linkedin',
+	// },
+	Keyoxide: {
+		link: 'https://keyoxide.org/F846C93BF4BEAB99D98D29B2DF3CEC6BF015D41D',
+		image: keyoxide,
 	},
 };
 
