@@ -1,11 +1,9 @@
 ---
-import { t, changeLanguage } from 'i18next';
-import i18nConfig from '../../../astro-i18next.config.ts';
 
 import Index from '../index.astro';
 
 export function getStaticPaths() {
-	return i18nConfig.locales.splice(1).map((lang) => ({
+	return ["pl", "en"].map((lang) => ({
 		params: {
 			lang,
 		},
