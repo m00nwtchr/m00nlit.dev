@@ -9,7 +9,6 @@ import tailwindcss from '@tailwindcss/vite';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 
 export default defineConfig({
-	site: 'https://m00nlit.dev',
 	integrations: [sitemap(), icon()],
 	vite: {
 		plugins: [
