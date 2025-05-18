@@ -13,13 +13,14 @@ interface Props {
 const { title, keywords, description } = Astro.props;
 const lang = Astro.params.lang || 'en';
 
-import '../styles/base.css';
+import style from '../styles/base.css?inline';
 ---
 
 <!doctype html>
 <html lang={lang}>
 	<head>
 		<Head title={title} keywords={keywords} description={description} />
+		<style is:inline set:html={style}></style>
 	</head>
 
 	<body class="bg-steel-gray-950 text-silver-400 font-sans">
