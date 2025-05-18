@@ -32,7 +32,7 @@
 	const calcNumStars = () =>
 		Math.floor(canvas.width * canvas.height * starDensity);
 
-	const generateStars = (numStars) => {
+	const generateStars = numStars => {
 		// Generate stars and store their positions and velocities
 		const stars = [];
 		for (let i = 0; i < numStars; i++) {

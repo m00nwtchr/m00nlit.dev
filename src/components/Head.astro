@@ -17,7 +17,10 @@ function removeLanguagePrefix(path: string) {
 }
 
 const currentPathWithoutLanguage = removeLanguagePrefix(Astro.url.pathname);
+
+import style from '../styles/base.css?inline';
 ---
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,6 +33,7 @@ const currentPathWithoutLanguage = removeLanguagePrefix(Astro.url.pathname);
 
 <meta name="generator" content={Astro.generator} />
 
+<style is:inline set:html={style}></style>
 <Font cssVariable="--font-inter" preload />
 <Font cssVariable="--font-crimson-pro" preload />
 
@@ -40,6 +44,12 @@ const currentPathWithoutLanguage = removeLanguagePrefix(Astro.url.pathname);
 <meta property="og:image" content={new URL('og.png', Astro.url)} />
 <meta property="og:description" content={description} />
 
-{locales.map(lang => (
-	<link rel="alternate" hreflang={lang} href={getAbsoluteLocaleUrl(lang, currentPathWithoutLanguage)} />
-))}
+{
+	locales.map(lang => (
+		<link
+			rel="alternate"
+			hreflang={lang}
+			href={getAbsoluteLocaleUrl(lang, currentPathWithoutLanguage)}
+		/>
+	))
+}

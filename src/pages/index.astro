@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Base.astro';
 import { SOCIALS, PROJECTS } from '../index';
 
-import { m } from "../paraglide/messages.js";
+import { m } from '../paraglide/messages.js';
 ---
 
 <Layout
@@ -15,11 +15,13 @@ import { m } from "../paraglide/messages.js";
 >
 	<section class="relative isolate px-5 pt-5 sm:px-28">
 		<div class="max-w-2xl">
- 			<h1
+			<h1
 				class="text-center font-serif text-5xl font-semibold tracking-tight text-balance text-white sm:text-left sm:text-7xl sm:whitespace-pre-line"
-			>{m.page_header()}</h1>
+			>
+				{m.page_header()}
+			</h1>
 			<h2
-				class="text-center text-silver-200 text-xl font-medium sm:text-left sm:text-2xl mt-2"
+				class="text-silver-200 mt-2 text-center text-xl font-medium sm:text-left sm:text-2xl"
 			>
 				{m.page_subtitle()}
 			</h2>
@@ -54,7 +56,13 @@ import { m } from "../paraglide/messages.js";
 									aria-hidden="true"
 									class="text-rhino-400 outline-rhino-400 mx-auto mb-2 flex aspect-square h-12 items-center justify-center rounded-full outline"
 								>
-									{ social.icon ? <Icon name={social.icon} class="h-4/6 w-4/6" /> : (social.image ? <social.image class="h-4/6 w-4/6" /> : "") }
+									{social.icon ? (
+										<Icon name={social.icon} class="h-4/6 w-4/6" />
+									) : social.image ? (
+										<social.image class="h-4/6 w-4/6" />
+									) : (
+										''
+									)}
 								</div>
 								<figcaption>{name}</figcaption>
 							</figure>
@@ -70,7 +78,7 @@ import { m } from "../paraglide/messages.js";
 		class="flex flex-col items-center items-stretch gap-10 px-5 sm:flex-row sm:px-28"
 	>
 		{
-			PROJECTS.map((project) => (
+			PROJECTS.map(project => (
 				<div class="glass box-border flex flex-1 flex-col gap-5 rounded-2xl p-5 text-center">
 					{project.image ? (
 						<project.image

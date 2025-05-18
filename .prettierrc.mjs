@@ -4,6 +4,7 @@ export default {
 	useTabs: true,
 	semi: true,
 	singleQuote: true,
+	arrowParens: 'avoid',
 	overrides: [
 		{
 			files: '*.astro',
