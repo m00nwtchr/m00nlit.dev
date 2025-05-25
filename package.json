@@ -7,27 +7,31 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"machine-translate": "inlang machine translate --project project.inlang"
+		"machine-translate": "inlang machine translate --project project.inlang",
+		"deploy": "pnpm run build --site https://www.m00nlit.dev && wrangler deploy",
+		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
-		"@astrojs/node": "^9.2.1",
+		"@astrojs/cloudflare": "^12.5.3",
 		"@astrojs/sitemap": "^3.4.0",
 		"@iconify-json/arcticons": "^1.2.26",
 		"@iconify-json/fa6-brands": "^1.2.5",
-		"@tailwindcss/vite": "4.0.0-beta.8",
-		"astro": "^5.7.13",
+		"astro": "^5.8.0",
 		"astro-icon": "^1.1.5",
-		"lightningcss": "^1.29.3",
 		"satori": "^0.12.2",
 		"satori-html": "^0.3.2",
-		"sharp": "^0.33.5",
-		"tailwindcss": "4.0.17"
+		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
-		"@inlang/cli": "^3.0.0",
+		"@inlang/cli": "^3.0.11",
 		"@inlang/paraglide-js": "2.0.12",
+		"@tailwindcss/vite": "^4.1.7",
+		"lightningcss": "^1.30.1",
 		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-tailwindcss": "^0.6.11"
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"tailwindcss": "^4.1.7",
+		"typescript": "^5.8.3",
+		"wrangler": "^4.16.1"
 	}
 }

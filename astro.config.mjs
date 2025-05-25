@@ -1,12 +1,13 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-import node from '@astrojs/node';
 
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 
 import tailwindcss from '@tailwindcss/vite';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
+
+import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
 	integrations: [sitemap(), icon()],
@@ -54,6 +55,9 @@ export default defineConfig({
 			},
 		],
 	},
-	// output: 'server',
-	// adapter: node({ mode: 'standalone' }),
+	adapter: cloudflare({
+		platformProxy: {
+			enabled: true,
+		},
+	}),
 });
