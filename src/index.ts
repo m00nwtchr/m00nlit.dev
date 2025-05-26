@@ -11,7 +11,7 @@ export const SOCIALS = {
 	// 	icon: 'fa6-brands:linkedin',
 	// },
 	Keyoxide: {
-		link: 'https://keyoxide.org/F846C93BF4BEAB99D98D29B2DF3CEC6BF015D41D',
+		link: 'https://keyoxide.org/m00n@m00nlit.dev',
 		image: keyoxide,
 	},
 };
