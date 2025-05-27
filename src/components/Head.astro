@@ -1,7 +1,8 @@
 ---
-import { locales, isLocale } from '../paraglide/runtime.js';
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
-import { Font } from 'astro:assets';
+//import { Font } from 'astro:assets';
+
+import { SEO } from 'astro-seo';
 
 interface Props {
 	title: string;
@@ -10,7 +11,9 @@ interface Props {
 }
 
 const { title, keywords, description } = Astro.props;
+const { url, site } = Astro;
 
+import { locales, isLocale } from '../paraglide/runtime.js';
 function removeLanguagePrefix(path: string) {
 	const [maybeLanguage, ...rest] = path.split('/').filter(Boolean);
 	return isLocale(maybeLanguage) ? rest.join('/') : path;
@@ -26,23 +29,12 @@ import style from '../styles/base.css?inline';
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<title>{title}</title>
 <meta name="author" content="Łukasz Mariański" />
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
+<title>{title}</title>
 
 <meta name="generator" content={Astro.generator} />
-
-<style is:inline set:html={style}></style>
-<Font cssVariable="--font-inter" preload />
-<Font cssVariable="--font-crimson-pro" preload />
-
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content={title} />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:type" content="website" />
-<meta property="og:image" content={new URL('og.png', Astro.url)} />
-<meta property="og:description" content={description} />
 
 {
 	locales.map(lang => (
@@ -53,3 +45,21 @@ import style from '../styles/base.css?inline';
 		/>
 	))
 }
+
+<SEO
+	openGraph={{
+		basic: {
+			title,
+			type: 'website',
+			image: '',
+			url,
+		},
+		optional: {
+			description,
+		},
+	}}
+/>
+
+<style is:inline set:html={style}></style>
+<!-- <Font cssVariable="--font-inter" preload /> -->
+<!-- <Font cssVariable="--font-crimson-pro" preload /> -->

@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/crimson-pro';
+
 @theme {
 	--font-*: initial;
 	/* --font-sans: */
@@ -10,9 +13,9 @@
 	/* Times, serif; */
 
 	--font-sans:
-		var(--font-inter), 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Inter Variable', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 		'Noto Color Emoji';
-	--font-serif: var(--font-crimson-pro);
+	--font-serif: 'Crimson Pro Variable';
 
 	--color-*: initial;
 	--color-white: #ffffff;

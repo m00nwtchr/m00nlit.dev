@@ -14,13 +14,13 @@
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.5.3",
 		"@astrojs/sitemap": "^3.4.0",
+		"@fontsource-variable/crimson-pro": "^5.2.5",
+		"@fontsource-variable/inter": "^5.2.5",
 		"@iconify-json/arcticons": "^1.2.26",
 		"@iconify-json/fa6-brands": "^1.2.5",
 		"astro": "^5.8.0",
 		"astro-icon": "^1.1.5",
-		"satori": "^0.12.2",
-		"satori-html": "^0.3.2",
-		"sharp": "^0.33.5"
+		"astro-seo": "^0.8.4"
 	},
 	"devDependencies": {
 		"@inlang/cli": "^3.0.11",
@@ -30,8 +30,14 @@
 		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
+		"react": "^19.1.0",
+		"sharp": "^0.33.5",
 		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3",
-		"wrangler": "^4.16.1"
+		"wrangler": "^4.17.0"
+	},
+	"pnpm": {
+		"overrides": {},
+		"onlyBuiltDependencies": ["esbuild", "sharp", "workerd"]
 	}
 }
