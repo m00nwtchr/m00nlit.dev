@@ -7,7 +7,7 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 
-import cloudflare from '@astrojs/cloudflare';
+// import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
 	integrations: [sitemap(), icon()],
